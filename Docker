@@ -57,6 +57,8 @@ COMMAND：
       --format string   控制输出格式，如.ID代表ID信息，.Repository代表仓库信息等。
       --no-trunc        对输出结果中太长的部分是否进行阶段，如镜像的ID信息，默认为是。
   -q, --quiet           仅输出ID信息，默认为否。
+  -o, --output string   导出镜像到指定文件中，而不是STDOU。 
+
   	prune      删除没有使用的镜像
   	pull         从镜像仓库拉取镜像
  	push        推送镜像到镜像仓库（在仓库管理小节中讲解）
