@@ -16,3 +16,11 @@ Docker Engine是具有以下主要组件的客户端-服务器应用程序：
  1.服务器是一种长期运行的程序，称为守护程序进程（ dockerd命令）。
  2.REST API，它指定程序可以用来与守护程序进行通信并指示其操作的接口。
  3.命令行界面（CLI）客户端（docker命令）。
+1.Docker daemon//docker服务器
+Docker daemon（dockerd）侦听Docker API请求并管理Docker对象。Docker daemon还可以与其他daemon通信以管理 Docker服务。接收客户端发送过来的命令，进行业务处理。
+2. Docker client//docker客户端
+Docker CLi（docker）是许多Docker用户与Docker交互的主要方式。提供了很多的docker命令。当用户使用Docker命令时，客户端会将这些命令发送到dockerd，由dockerd执行这些命令。Docker客户端可以与多个Docker daemon通信。
+3.REST API：指定程序可以用来与守护程序进行通信并指示其操作的接口。
+
+总结：CLI使用Docker REST API通过脚本或直接CLI命令控制或与Docker守护程序交互。许多其他Docker应用程序都使用基础API和CLI。
+守护程序创建和管理Docker对象，例如图像，容器，网络和卷。
