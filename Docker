@@ -50,6 +50,13 @@ COMMAND：
   	inspect     显示一个或多个镜像的详细信息
   	load         将保存到本地的镜像压缩文件加载成镜像
  	ls             列出本地存在的镜像
+	Options:
+  -a, --all             列出所有（包括临时文件）镜像文件，默认为否；
+      --digests       列出镜像的数字摘要值
+  -f, --filter filter   过滤列出的镜像，如dangling=true只显示没有被使用的镜像；也可以指定带有特定标注的镜像等。
+      --format string   控制输出格式，如.ID代表ID信息，.Repository代表仓库信息等。
+      --no-trunc        对输出结果中太长的部分是否进行阶段，如镜像的ID信息，默认为是。
+  -q, --quiet           仅输出ID信息，默认为否。
   	prune      删除没有使用的镜像
   	pull         从镜像仓库拉取镜像
  	push        推送镜像到镜像仓库（在仓库管理小节中讲解）
