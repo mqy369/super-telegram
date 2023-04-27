@@ -56,3 +56,12 @@ COMMAND：
   	rm           删除一个或多个镜像
   	save         以tar压缩文件的格式将镜像保存到本地
   	tag          为镜像添加一个新的镜像标签
+docker search --help
+搜索官方提供的Nginx镜像：
+docker search -f "is-official=true" nginx
+搜索是否是使用自动构建的Nginx镜像：
+$ docker search --filter "is-automated=true" nginx
+搜索所有收藏数超过4的关键词包括tensorflow镜像：
+$ docker search --filter "stars=4" tensorflow
+搜索tensorflow镜像，限制输出搜索个数为5：
+$ docker search --limit 5 tensorflow
