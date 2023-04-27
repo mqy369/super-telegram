@@ -38,3 +38,21 @@ Docker三大核心概念：1.Docker镜像.2Docker容器.3.Docker 仓库
 
 仓库分为公开仓库（Public）和私有仓库（Private）两种形式。
 push 镜像到仓库,从仓库pull下镜像。默认是从Docker Hub仓库拉取。
+1.docker管理命令
+docker --help查看docker的帮助文档
+docker vesion查看docker的版本号
+docker info查看docker的初始化信息
+docker image --help
+COMMAND：
+	build       通过Dockerfile构建镜像（在Dockerfile章节中详细讲解）
+	history     显示镜像的历史信息
+	import      从一个操作系统模板文件导入一个镜像
+  	inspect     显示一个或多个镜像的详细信息
+  	load         将保存到本地的镜像压缩文件加载成镜像
+ 	ls             列出本地存在的镜像
+  	prune      删除没有使用的镜像
+  	pull         从镜像仓库拉取镜像
+ 	push        推送镜像到镜像仓库（在仓库管理小节中讲解）
+  	rm           删除一个或多个镜像
+  	save         以tar压缩文件的格式将镜像保存到本地
+  	tag          为镜像添加一个新的镜像标签
