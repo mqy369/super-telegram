@@ -27,3 +27,14 @@ Docker CLi（docker）是许多Docker用户与Docker交互的主要方式。提�
 Docker使用客户端-服务器架构。
 Docker客户端与Docker守护进程进行对话，该守护进程完成了构建，运行和分发Docker容器的繁重工作。
 Docker客户端和守护程序可以在同一系统上运行，或者您可以将Docker客户端连接到远程Docker守护程序。Docker客户端和守护程序在UNIX套接字或网络接口上使用REST API进行通信。
+Docker三大核心概念：1.Docker镜像.2Docker容器.3.Docker 仓库
+1.Docker镜像1.ID：每一层都有一个ID，作为该层的唯一标识。
+            2.元数据：它不仅能够让Docker获取运行和构建时的信息，还包括父层的层次信息，只读层和读写层都包含元数据。
+            3.指针：除了最底层外的每一层都包括一个指向父层的指针。
+2.Docker容器容器就是从镜像启动的时候，在镜像的最上层创建一个可写层。
+容器 = 镜像 + 读写层。
+3.Docker仓库仓库是集中存放镜像和管理镜像文件的场所。
+仓库注册服务器上往往存放着多个仓库，每个仓库中又包含了多个镜像，每个镜像有不同的标签。当前最大的仓库注册服务器是Docker Hub：https://hub.docker.com/。
+
+仓库分为公开仓库（Public）和私有仓库（Private）两种形式。
+push 镜像到仓库,从仓库pull下镜像。默认是从Docker Hub仓库拉取。
