@@ -24,3 +24,6 @@ Docker CLi（docker）是许多Docker用户与Docker交互的主要方式。提�
 
 总结：CLI使用Docker REST API通过脚本或直接CLI命令控制或与Docker守护程序交互。许多其他Docker应用程序都使用基础API和CLI。
 守护程序创建和管理Docker对象，例如图像，容器，网络和卷。
+Docker使用客户端-服务器架构。
+Docker客户端与Docker守护进程进行对话，该守护进程完成了构建，运行和分发Docker容器的繁重工作。
+Docker客户端和守护程序可以在同一系统上运行，或者您可以将Docker客户端连接到远程Docker守护程序。Docker客户端和守护程序在UNIX套接字或网络接口上使用REST API进行通信。
