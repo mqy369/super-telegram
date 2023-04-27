@@ -74,3 +74,16 @@ $ docker search --filter "is-automated=true" nginx
 $ docker search --filter "stars=4" tensorflow
 搜索tensorflow镜像，限制输出搜索个数为5：
 $ docker search --limit 5 tensorflow
+docker仓库管理
+docker container create [OPTIONS] IMAGE [COMMAND] [ARG...] 
+常用Options:
+  -e, --env list     指定容器内环境变量（创建容器时，为容器创建参数）。
+  -h, --hostname string  指定容器内的主机名
+  --name string       指定容器的别名
+  -p, --publish list  指定如何映射到本地主机端口（将容器的端口映射给主机）
+  --restart string    容器的重启策略，默认为no，always表示永远启动。还包               
+                            括unless-stopped、on-failure
+  -i, --interactive   保持标准输入打开，默认为false
+  -t, --tty           是否分配一个伪终端，默认为false
+  -v, --volume list   挂载主机上的文件卷到容器内（数据卷章节中讲解）
+ --network network    将容器链接到指定的网络（后续网络章节讲解）
