@@ -95,5 +95,37 @@ Docker容器数据持续化
 3）写入容器的可写层需要存储驱动程序来管理文件系统。存储驱动程序使用Linux内核提供联合文件系统。与使用直接写入主机文件系统的数据卷相比，这种额外的抽象降低了性能。
 在生产环境中使用Docker。往往需要对数据进行持久化，或者需要在多个容器之间进行数据共享，这就是容器数据管理操作。
 Docker容器的数据管理主要方式：
-Docker为容器提供了两个选项来将文件存储在主机中，以便容器停止后文件也可以持久存储：volumes（数据卷） 和 Bind mounts（绑定挂载）。如果在Linux上运行Docker，则可以使用tmpfs mount（临时文件系统挂载）。
+Docker为容器提供了两个选项来将文件存储在主机中，以便容器停止后文件也可以持久存储：volumes（数据Volume（卷）：存储在由Docker管理的主机文件系统的一部分中（在Linux上/var/lib/docker/volumes/）。非Docker进程不应修改文件系统的这一部分。卷是在Docker中持久保存数据的最佳方法。
 
+Bind Mount：可以存储在主机系统上的任何位置。它们甚至可能是重要的系统文件或目录。Docker主机或Docker容器上的非Docker进程可以随时对其进行修改。
+
+tmpfs Mount：仅存储在主机系统的内存中,并且永远不会写入主机系统的文件系统中。
+卷） 和 Bind mounts（绑定挂载）。如果在Linux上运行Docker，则可以使用tmpfs mount（临时文件系统挂载）。
+数据卷：
+数据卷(Data Volumes)是一个可供容器使用的特殊目录(/var/lib/docker/volumes)，由Docker创建和管理。卷是将数据持久存储在Docker容器和服务中的首选方法。
+特点：
+1 数据卷可以在容器之间共享和重用，容器间传递数据将变得高效与方便；
+2 对数据卷内数据的修改会立马生效，无论是容器内的操作还是本地操作；
+3 对数据卷的更新不会影响镜像，解耦开应用和数据；
+4 卷会一直存在，直到没有容器使用，可以安全的卸载它。
+docker volume -option
+COMMAND：
+	create      创建卷
+  	inspect     显示一个或多个卷的详细信息
+  	ls            列出卷
+  	prune      删除所有没被使用的卷
+ 	rm           删除一个或者多个卷        
+ls	Options：
+	-f, --filter filter   过滤输出(e.g. 'dangling=true')
+      	     --format string   格式化输出
+  	-q, --quiet           只显示卷的名字      
+create	Options：
+     -d, --driver string   指定卷的驱动 (default "local")
+      --label list      Set metadata for a volume
+       -o, --opt map         Set driver specific options (default map[])      
+数据卷：
+容器中的数据保存在Docke主机的指定位置（/var/lib/docker/volumes）
+创建方式：
+1）通过Dockerfile创建镜像的时候，通过VOLUME来指定数据存储位置。
+2）在启动容器的时候，通过-v或者--volume来指定。
+3）在启动容器的时候，通过--mount来指定。
