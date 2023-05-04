@@ -74,7 +74,7 @@ $ docker search --filter "is-automated=true" nginx
 $ docker search --filter "stars=4" tensorflow
 搜索tensorflow镜像，限制输出搜索个数为5：
 $ docker search --limit 5 tensorflow
-docker仓库管理
+docker容器管理
 docker container create [OPTIONS] IMAGE [COMMAND] [ARG...] 
 常用Options:
   -e, --env list     指定容器内环境变量（创建容器时，为容器创建参数）。
